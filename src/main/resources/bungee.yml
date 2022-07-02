@@ -1,0 +1,5 @@
+name: ChallengeServerBungee
+version: ${project.version}
+main: de.nikocraft.challengeserverbungee.Main
+author: Nikocraft
+description: The bungeecord plugin of the challenge minecraft server
