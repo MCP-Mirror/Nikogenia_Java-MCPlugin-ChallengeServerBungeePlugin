@@ -10,7 +10,22 @@ import net.md_5.bungee.api.plugin.Plugin;
 //MAIN CLASS
 public final class Main extends Plugin {
 
+    //VARIABLES
+
+    //The instance of the main
+    private static Main instance;
+
+
     //OVERRIDE METHODS
+
+    //Called, if the plugin is loading
+    @Override
+    public void onLoad() {
+
+        //Set the instance to this
+        instance = this;
+
+    }
 
     //Called, if the plugin is enabling
     @Override
@@ -33,5 +48,11 @@ public final class Main extends Plugin {
         getLogger().info("Plugin disabled.");
 
     }
+
+
+    //GETTERS
+
+    //The instance of the main
+    public static Main getInstance() { return instance; }
 
 }
