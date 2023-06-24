@@ -45,6 +45,9 @@ public class ConnectionListeners implements Listener {
     @EventHandler
     public void onQuit(PlayerDisconnectEvent event) {
 
+        //Check server
+        if (event.getPlayer().getServer() == null) return;
+
         //Send quit message
         if (!event.getPlayer().getServer().getInfo().getName().equals("redstone")) {
             for (ProxiedPlayer player : ProxyServer.getInstance().getPlayers()) {
@@ -70,7 +73,7 @@ public class ConnectionListeners implements Listener {
 
         ServerPing ping = event.getResponse();
 
-        ping.setDescriptionComponent(new TextComponent(ChatColor.RED.toString() + ChatColor.BOLD + "         Challenge Network" + ChatColor.GOLD + " [1.8 - 1.19]\n" +
+        ping.setDescriptionComponent(new TextComponent(ChatColor.RED.toString() + ChatColor.BOLD + "        Challenge Network" + ChatColor.GOLD + " [1.8 - 1.20.1]\n" +
                 ChatColor.GREEN + ChatColor.ITALIC + "            Thanks to the hole build team! :)"));
 
         int amount = 0;
